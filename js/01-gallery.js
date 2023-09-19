@@ -4,6 +4,7 @@ import { galleryItems } from './gallery-items.js';
 
 const refs = {
   renderedGalleryList: document.querySelector(".gallery"),
+  modalWindow: document.querySelector("div.basicLightbox")
 };
 
 // =========================================================
@@ -43,6 +44,8 @@ function onElClick(event) {
   event.preventDefault();
   // console.log(event.target.dataset.source);
 
+  // refs.modalWindow.addEventListener("keydown", onEscapePush)
+
   const instance = basicLightbox.create(`
   <div class="modal">
     <img src="${event.target.dataset.source}" width="800" height="600">
@@ -52,6 +55,8 @@ function onElClick(event) {
   })
 
   instance.show()
+
+
 
 };
 
